@@ -59,6 +59,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         testvm.vm.network "private_network", ip: "192.168.33.74"
     end
 
+    config.vm.define "tester-opensuse-64" do |testvm|
+        testvm.vm.box = "webhippie/opensuse-13.2"
+
+        testvm.ssh.port = 2406
+        testvm.vm.network "forwarded_port", guest: 22, host: testvm.ssh.port
+        testvm.vm.network "private_network", ip: "192.168.33.75"
+    end
+
   config.vm.define "tester-win12-64" do |testvm|
     testvm.vm.box = "tudor_g/win2012"
     testvm.vm.communicator = "winrm"

@@ -9,6 +9,7 @@ tester-debian6-64
 tester-centos6-32
 tester-centos6-64
 tester-centos7-64
+tester-opensuse-64
 
 [darwin]
 localhost
